@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футуристичный сайт-визитка</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        header img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 3px solid #00ff00;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav button {
+            background-color: #0d0d0d;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #00ff00;
+            color: #0d0d0d;
+        }
+
+        section {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            width: 80%;
+        }
+
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Photo.jpg" alt="Фото">
+        <nav>
+            <button onclick="showSection('about')">Обо мне</button>
+            <button onclick="showSection('tools')">Инструменты</button>
+            <button onclick="showSection('contacts')">Контакты</button>
+            <button onclick="showSection('resume')">Резюме</button>
+            <button onclick="showSection('portfolio')">Портфолио</button>
+        </nav>
+    </header>
+
+    <section id="about" class="active">
+        <h2>Обо мне</h2>
+        <p>Привет! Я - QA Engineer с таким то опытом работы. Здесь можно написать что то еще, подробнее напишу по ходу составления легенды.</p>
+    </section>
+
+    <section id="tools">
+        <h2>Какие инструменты использую в работе</h2>
+        <p>Developer Tools в браузере для тестирования front-части web-приложений</p>
+        <p>Postman для тестирования API</p>
+        <p>ВНЕС ИЗМЕНЕНИЯ В ВЕТКЕ НУЖНО ЭТО ПРОВЕРИТЬ</p>
+        <p>Swagger для тестирования API и документации по API</p>
+        <p>MySQL - просмотр данных в БД и написание SQL-запросов</p>
+        <p>Яндекс трекер - организация ежедневной работы и написание багрепортов</p>
+        <p>Test it - написание тест-кейсов</p>
+        <p>Kibana - Просмотр логов приложений</p>
+        <p>Figma - Тестирование user-interface front-end</p>
+
+    </section>
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <p>Email: example@example.com</p>
+        <p>Телефон: +123456789</p>
+        <a href="https://t.me/Havimachine">Мой телеграм</a>
+    </section>
+
+    <section id="resume">
+        <h2>Резюме</h2>
+        <p>Здесь будет информация о моем опыте работы и образовании.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <p>Здесь будут представлены мои работы и проекты.</p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
